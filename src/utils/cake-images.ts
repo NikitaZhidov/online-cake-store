@@ -1,0 +1,1 @@
+export const CAKE_IMAGE_SRC = 'https://i.pinimg.com/originals/20/13/9e/20139ec05ccf5a6a9ce274748cc7e828.png'
