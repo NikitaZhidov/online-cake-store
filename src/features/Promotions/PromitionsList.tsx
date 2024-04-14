@@ -1,16 +1,13 @@
-import PromotionCard from "./PromitionCard";
-
-const promotions = [
-    { text: 'Подборка специально для вас' },
-    { text: 'Стартуем' },
-    { text: 'Крем от СУПЕР ТОРТ' },
-    { text: 'Зима всё!' },
-    { text: '3=2 АКЦИЯ!' },
-];
+import { NavLink } from "react-router-dom";
+import { mockPromotions } from "../../mock-data/promotions";
+import PromotionMiniCard from "./PromitionMiniCard";
+import { CoreRoutes } from "../../routes";
 
 const PromotionsList = () => {
     return <div className="flex items-center gap-4">
-        {promotions.map(p => <PromotionCard key={p.text} text={p.text} />)}
+        {mockPromotions.map(p => <NavLink key={p.name} to={CoreRoutes.promotions}>
+            <PromotionMiniCard promotion={p} />
+        </NavLink>)}
     </div>;
 }
 

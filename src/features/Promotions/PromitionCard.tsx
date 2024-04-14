@@ -1,13 +1,19 @@
-import { CAKE_IMAGE_SRC } from "../../utils/cake-images";
+import { Promotion } from "../../mock-data/promotions";
 
 type Props = {
-    text: string;
+    promotion: Promotion;
 }
 
 const PromotionCard = (props: Props) => {
-    return <div className="relative h-64 w-48 shadow-sm rounded-lg overflow-hidden p-2">
-        <img className="absolute inset-0 object-cover h-full w-full z-0 blur-sm opacity-70" src={CAKE_IMAGE_SRC} alt="" />
-        <div className="relative z-10 text-white text-xl font-light leading-none">{props.text}</div>
+    return <div className="relative w-64 shadow-md border border-black/5 rounded-lg overflow-hidden">
+        <div className="w-full h-16 left-0 p-1.5 text-center flex items-center justify-center border-b border-b-black/20">
+            <div className="relative z-10 leading-none text-lg">{props.promotion.name}</div>
+        </div>
+        <img className="object-cover h-64 w-full z-0 opacity-70" src={props.promotion.img} alt="" />
+
+        <div className="w-full h-12 left-0 p-1.5">
+            <div className="relative z-10 leading-none text-sm font-light text-gray-400">{props.promotion.description}</div>
+        </div>
     </div>;
 }
 
