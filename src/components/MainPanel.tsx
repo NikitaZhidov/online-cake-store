@@ -1,6 +1,7 @@
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { Button } from '@mui/material';
 import { NavLink } from 'react-router-dom';
+import { CoreRoutes } from '../routes';
 
 
 const MainPanel = () => {
@@ -15,10 +16,12 @@ const MainPanel = () => {
         </div>
 
         <div>
-            <Button className='flex flex-col' color="primary">
-                <AccountCircleIcon />
-                <span className='text-xs font-bold'>Кабинет</span>
-            </Button>
+            <NavLink to={CoreRoutes.profile}>
+                <Button className='flex flex-col' color="primary">
+                    <AccountCircleIcon />
+                    <span className='text-xs font-bold'>Кабинет</span>
+                </Button>
+            </NavLink>
         </div>
     </div>;
 }

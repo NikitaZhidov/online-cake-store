@@ -6,5 +6,7 @@ export const MainRoutes = {
 
 export const CoreRoutes = {
     catalog: 'catalog',
-    promotions: 'promotions'
+    promotions: 'promotions',
+    profile: 'profile',
+    cart: 'cart',
 }

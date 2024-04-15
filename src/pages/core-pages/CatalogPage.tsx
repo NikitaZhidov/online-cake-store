@@ -7,7 +7,7 @@ const CatalogPage = () => {
 
         <div className="flex flex-wrap gap-12">
             {mockCakes.map(c =>
-                <CakeCard key={c.name} name={c.name} description={c.description} price={c.price} img={c.img} />
+                <CakeCard cake={c} key={c.name} />
             )}
         </div>
     </div>;

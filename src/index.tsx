@@ -9,6 +9,11 @@ import NewsPage from './pages/service-pages/NewsPage';
 import CatalogPage from './pages/core-pages/CatalogPage';
 import PromotionsPage from './pages/core-pages/PromotionsPage';
 import RecomendationsPage from './pages/core-pages/RecomendationsPage';
+import ProfilePage from './pages/core-pages/ProfilePage';
+import { Provider } from 'react-redux';
+import { configureStore } from '@reduxjs/toolkit';
+import globalStoreReducer from './store/global-store';
+import CartPage from './pages/core-pages/CartPage';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -34,6 +39,14 @@ const router = createBrowserRouter([
           {
             path: CoreRoutes.promotions,
             element: <PromotionsPage />
+          },
+          {
+            path: CoreRoutes.profile,
+            element: <ProfilePage />,
+          },
+          {
+            path: CoreRoutes.cart,
+            element: <CartPage />,
           }
         ],
       },
@@ -54,5 +67,11 @@ const router = createBrowserRouter([
 ])
 
 root.render(
-  <RouterProvider router={router} />
+  <Provider store={configureStore({
+    reducer: {
+      globalStore: globalStoreReducer,
+    }
+  })}>
+    <RouterProvider router={router} />
+  </Provider>
 );
